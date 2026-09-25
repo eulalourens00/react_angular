@@ -1,0 +1,28 @@
+<h1>Пупсик, ты будешь послушным. "Нет" - {{ title() }}</h1>
+
+<h2>Сделай все таски или я отшлепаю тебя</h2>
+
+<div class="create-block">
+  <input
+    type="text"
+    placeholder="Название задачи..."
+    #taskInput
+    (keyup.enter)="createNewTask(taskInput.value); taskInput.value = ''" />
+
+  <button (click)="createNewTask(taskInput.value); taskInput.value = ''">
+    Создать таску
+  </button>
+</div>
+
+<app-task-card *ngFor="let task of tasks; trackBy: trackById" [task]="task">
+</app-task-card>
+
+<img
+  *ngIf="showPicture"
+  src="https://i.pinimg.com/736x/d7/d8/c3/d7d8c3b3d2a2ade71a3c2a23a7f822fe.jpg"
+  alt="Котик"
+  class="surprise-image" />
+
+<router-outlet></router-outlet>
+
+<router-outlet></router-outlet>

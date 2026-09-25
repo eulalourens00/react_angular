@@ -1,0 +1,9 @@
+<div class="task-card" [class.green]="isGreen">
+    <span class="task-title">{{ task.title }}</span>
+
+    <button
+        (click)="toggleColor()"
+        [class.green]="isGreen">
+        Выполнено
+    </button>
+</div>
